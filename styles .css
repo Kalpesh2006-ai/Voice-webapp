@@ -1,0 +1,96 @@
+/* styles.css - simple, accessible styles */
+:root{
+  --bg: #f8f9fa;
+  --card:#ffffff;
+  --text:#111827;
+  --accent:#1A73E8;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  padding-bottom:40px;
+}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 16px;
+  background:var(--accent);
+  color:#fff;
+}
+.brand{font-weight:700}
+.container{
+  max-width:720px;
+  margin:18px auto;
+  padding:0 16px;
+}
+.search-section{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-bottom:12px;
+}
+#searchInput{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #d1d5db;
+  font-size:16px;
+}
+.voice-controls button{
+  padding:10px 12px;
+  border-radius:8px;
+  border:none;
+  background:#e5e7eb;
+}
+.stations{
+  margin-top:6px;
+}
+ul#stations-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.station-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 6px 18px rgba(15,23,42,0.06);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.station-meta{
+  display:flex;flex-direction:column;
+}
+.station-title{font-weight:600}
+.station-sub{font-size:13px;color:var(--muted)}
+.controls button{margin-left:8px}
+.nav-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.nav-actions button{
+  padding:10px 12px;border-radius:10px;border:none;background:var(--accent);color:#fff;cursor:pointer;
+}
+.footer{max-width:720px;margin:12px auto;text-align:center;color:var(--muted);font-size:13px}
+
+/* Visually hidden helper */
+.visually-hidden{
+  position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;
+}
+
+/* High contrast mode */
+.high-contrast{
+  --bg:#000;
+  --card:#000;
+  --text:#fff;
+  --accent:#ffbb00;
+}
+
+/* Large text */
+.large-text{font-size:1.25rem}

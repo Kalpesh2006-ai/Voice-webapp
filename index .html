@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accessible Metro — Voice & Assistive Demo</title>
+  <link rel="stylesheet" href="styles .css" />
+</head>
+<body>
+  <header class="topbar" role="banner" aria-label="Metro Live Header">
+    <div class="brand" id="title">Metro Live</div>
+    <div class="controls" role="region" aria-label="Accessibility Controls">
+      <button id="contrastToggle" aria-pressed="false" aria-label="Toggle high contrast">High Contrast</button>
+      <button id="largeTextToggle" aria-pressed="false" aria-label="Toggle large text">Large Text</button>
+    </div>
+  </header>
+
+  <main role="main" class="container" aria-labelledby="title">
+    <section class="search-section" aria-label="Search and Navigation" role="search">
+      <label for="searchInput" class="visually-hidden">Search station</label>
+      <input id="searchInput" type="text" placeholder="Search station..." aria-autocomplete="list" aria-controls="stations-list" />
+      <div class="voice-controls">
+        <button id="startVoice" aria-label="Start voice search">🎙️ Speak</button>
+        <button id="stopVoice" aria-label="Stop voice search" disabled>⏹️ Stop</button>
+      </div>
+    </section>
+
+    <section class="stations" aria-label="Station results" role="region">
+      <h2 id="results-heading">Station Results</h2>
+      <ul id="stations-list" role="list" aria-labelledby="results-heading">
+        <!-- Stations inserted by JS -->
+      </ul>
+    </section>
+
+    <section class="train-detail" aria-live="polite" role="status" id="live-announcements">
+      <!-- Live audio announcements shown here for screen readers -->
+    </section>
+
+    <nav class="nav-actions" role="navigation" aria-label="Navigation actions">
+      <button id="announceBtn">Announce Next Train</button>
+      <button id="vibrateBtn">Vibrate Alert (simulate arrival)</button>
+      <button id="navigateBtn">Navigate to Selected Station</button>
+    </nav>
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <small>Demo: Voice search, ARIA landmarks, High-contrast, Large-text, Vibration & Audio announcements.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
